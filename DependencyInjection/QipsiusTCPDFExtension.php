@@ -19,7 +19,7 @@ class QipsiusTCPDFExtension extends Extension
      * @return void
      * @throws Exception
      */
-    public function load(array $configs, ContainerBuilder $container): void
+    public function load(array $configs, ContainerBuilder $container)
     {
         $processor     = new Processor();
         $configuration = new Configuration();

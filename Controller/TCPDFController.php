@@ -17,7 +17,7 @@ class TCPDFController
      * @param string $className The class name to use. Default is TCPDF. Must be based on TCPDF
      * @throws ReflectionException
      */
-    public function __construct(string $className)
+    public function __construct($className)
     {
         $this->setClassName($className);
     }
@@ -30,7 +30,7 @@ class TCPDFController
      * @return TCPDF
      * @throws ReflectionException
      */
-    public function create(): TCPDF
+    public function create()
     {
         $rc = new ReflectionClass($this->className);
         return $rc->newInstanceArgs(func_get_args());
@@ -43,7 +43,7 @@ class TCPDFController
      * @throws LogicException if the class is not, or does not inherit from, TCPDF
      * @throws ReflectionException
      */
-    public function setClassName(string $className): void
+    public function setClassName($className)
     {
         $rc = new ReflectionClass($className);
         if (!$rc->isSubclassOf('TCPDF') && $rc->getName() !== 'TCPDF')

@@ -13,7 +13,7 @@ class Configuration implements ConfigurationInterface
      *
      * @return TreeBuilder
      */
-    public function getConfigTreeBuilder(): TreeBuilder
+    public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder('qipsius_tcpdf');
 
@@ -38,9 +38,9 @@ class Configuration implements ConfigurationInterface
     /**
      * Adds the core TCPDF configuration
      *
-     * @param $rootNode
+     * @param ArrayNodeDefinition $rootNode
      */
-    protected function addTCPDFConfig(ArrayNodeDefinition $rootNode): void
+    protected function addTCPDFConfig(ArrayNodeDefinition $rootNode)
     {
         $rootNode
             ->children()
