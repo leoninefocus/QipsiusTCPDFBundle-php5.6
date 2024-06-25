@@ -12,7 +12,7 @@ class QipsiusTCPDFBundle extends Bundle
      * Ran on bundle boot, our TCPDF configuration constants
      * get defined here if required
      */
-    public function boot(): void
+    public function boot()
     {
         if (!$this->container->hasParameter('qipsius_tcpdf.tcpdf')) {
             return;
@@ -61,7 +61,7 @@ class QipsiusTCPDFBundle extends Bundle
      *
      * @throws RuntimeException
      */
-    private function createDir($filePath): void
+    private function createDir($filePath)
     {
         $filesystem = new Filesystem();
         if (false === $filesystem->mkdir($filePath)) {
